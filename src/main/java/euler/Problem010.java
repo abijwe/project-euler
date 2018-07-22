@@ -2,6 +2,7 @@ package euler;
 
 import static util.PrettyPrint.printResult;
 import static util.Primes.*;
+import static util.Arithmetic.*;
 
 import java.util.Set;
 /**
@@ -16,11 +17,6 @@ public class Problem010 {
 
     public static void main(String[] args) {
         Set<Integer> primes = getPrimes(2000000);
-        long sum = 0;
-        for (int prime : primes) {
-            sum+= prime;
-        }
-
-        printResult(sum);
+        printResult(sum(primes));
     }
 }

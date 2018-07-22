@@ -1,5 +1,7 @@
 package util;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -25,7 +27,15 @@ public class Arithmetic {
     public static Set<Long> divisors(long n) {
         return _divisors(n, getPrimes((int) Math.sqrt(n)));
     }
-    
+
+    public static long sum(Collection<Integer> nums) {
+        long sum = 0;
+        for (int i : nums) {
+            sum += i;
+        }
+        return sum;
+    }
+
     private static Set<Long> _divisors(long n, final Set<Integer> primes) {
         if (divisorsCache.containsKey(n)) {
             return divisorsCache.get(n);
