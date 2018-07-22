@@ -24,14 +24,20 @@ public class Arithmetic {
         return n * n * (n + 1) * (n + 1) / 4;
     }
 
+    public static Set<Long> properDivisors(long n) {
+        Set<Long> divisors = _divisors(n, getPrimes((int)n));
+        divisors.remove(n);
+        return divisors;
+    }
+
     public static Set<Long> divisors(long n) {
         return _divisors(n, getPrimes((int) Math.sqrt(n)));
     }
 
-    public static long sum(Collection<Integer> nums) {
+    public static <T extends Number> long sum(Collection<T> nums) {
         long sum = 0;
-        for (int i : nums) {
-            sum += i;
+        for (T i : nums) {
+            sum += i.longValue();
         }
         return sum;
     }
@@ -47,6 +53,9 @@ public class Arithmetic {
                 divisors.addAll(_divisors(n/prime, primes));
             }
         }
+        divisors.add((long)1);
+        divisors.add(n);
+
         if (!divisorsCache.containsKey(n)) {
             divisorsCache.put(n, divisors);
         }
