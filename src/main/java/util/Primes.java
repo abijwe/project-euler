@@ -73,13 +73,13 @@ public class Primes {
     /**
      * Get a factors for the given number
      */
-    public static Set<Integer> getAllFactors(final int num) {
-        Set<Integer> factors = Sets.newTreeSet();
+    public static Set<Long> getAllFactors(final long num) {
+        Set<Long> factors = Sets.newTreeSet();
         Set<Integer> primes = getPrimes((int)Math.sqrt(num));
 
         primes.forEach(i -> {
             if (num%i == 0) {
-                factors.add(i);
+                factors.add((long)i);
                 factors.add(num/i);
             }
         });
