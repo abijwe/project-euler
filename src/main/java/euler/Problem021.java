@@ -23,7 +23,7 @@ import com.google.common.collect.Maps;
  * 
  * @author abijwe
  */
-public class Problem21 {
+public class Problem021 {
 
     public static void main(String[] args) {
         Map<Long, Long> numVsSumOfDivisors = Maps.newHashMap();
