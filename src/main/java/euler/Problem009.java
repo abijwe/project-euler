@@ -3,8 +3,6 @@ package euler;
 import java.util.List;
 import java.util.Set;
 
-import com.google.common.collect.Lists;
-
 import static util.Pythgorean.*;
 import static util.PrettyPrint.*;
 /**
